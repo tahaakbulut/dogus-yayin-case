@@ -157,18 +157,37 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 .dropdown {
   position: relative;
-}
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  box-shadow: 0 0 2px black;
-}
-.dropdown-menu.show {
-  display: block;
+  margin: 5px;
+  display: inline-block;
+  button {
+    padding: 5px 10px;
+    display: block;
+    background-color: #d8d8d8;
+    min-width: 140px;
+    &:hover {
+      background-color: #ececec;
+    }
+  }
+  > button {
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    text-align: left;
+    background-color: #ececec;
+  }
+  &-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0 0 2px black;
+
+    &.show {
+      display: block;
+    }
+  }
 }
 </style>

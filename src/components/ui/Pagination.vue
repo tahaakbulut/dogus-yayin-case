@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pagination">
     <button
       v-for="n in parseInt(getSites.length / 5) + 1"
       :key="n"
@@ -33,12 +33,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pagination {
+  display: grid;
+  justify-content: center;
+  padding: 5px;
+  gap: 5px;
+  grid-auto-flow: column;
+}
 button {
-  border: none;
+  border: 1px solid transparent;
   font-size: 18px;
+  padding: 3px 8px;
   background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: #f2f2f2;
+  }
   &.active {
-    border: 1px solid gray;
+    border-color: gray;
+    cursor: initial;
   }
 }
 </style>
